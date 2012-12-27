@@ -1,5 +1,6 @@
 require 'amqp'
 require 'net/smtp'
+require 'json'
 
 module ServiceBusHelper
   FANOUT = 'user.create'

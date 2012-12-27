@@ -1,6 +1,12 @@
 require 'sinatra'
+require 'json'
 require_relative 'service_bus_helper'
 
-get '/publish' do
-  ServiceBusHelper.publish 'Hello, world!'
+get '/new' do
+  erb :new
+end
+
+post '/save' do
+  ServiceBusHelper.publish params.to_json
+  erb :new
 end
